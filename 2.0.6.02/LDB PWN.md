@@ -31,6 +31,11 @@
 | keep on current screen | -[LDBAppDelegate applicationDidFinishCefInitialization] | 1000abe00 | 1000abecc | `mov    edx, 0x0` |
 | Notification Center    | -[LDBAppController saveNotifyCenterAndDisable]          | 100110db0 | 100110db0 | `ret`             |
 | hide other app         | -[LDBAppDelegate applicationDidFinishCefInitialization] | 1000abe00 | 1000ac07f | `nop` block       |
-
+| set window movable     | -[LDBAppDelegate applicationDidFinishLaunching:]        | 1000ab810 | 1000abb69 | `and edx, edx`    |
+| enable new tab button  | -[LDBAppDelegate applicationDidFinishLaunching:]        | 1000ab810 | 1000abb8e | `mov edx, 0x0`    |
+| keep focus             | -[LDBAppDelegate applicationDidResignActive:]           | 1000ace20 | 1000acff8 | `mov edx, 0x0`    |
+| put other app behind   | -[LDBAppDelegate applicationDidResignActive:]           | 1000ace20 | 1000acfec | `xchg    ax,ax`   |
+|                        | -[LDBAppDelegate applicationDidFinishLaunching:]        | 1000ab810 | 1000acff8 | `mov edx, 0x0`    |
+|                        | -[LDBAppDelegate applicationDidFinishLaunching:]        | 1000ab810 | 1000acff8 | `mov edx, 0x0`    |
 ​	
 
